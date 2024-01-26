@@ -1,0 +1,88 @@
+
+
+.train-search-container {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(249, 204, 204, 0.1);
+  }
+  
+  .header {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .text {
+    font-size: 20px;
+    color: #f8f8f8;
+   
+  }
+
+  .header-text{
+    font-size: 200px;
+    color: #f8f8f8;
+  }
+  
+  .underline {
+    height: 2px;
+    width: 50px;
+    background-color: #007bff;
+    margin: 0 auto;
+  }
+  
+  .inputs {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+  }
+  
+  .input {
+    flex: 1;
+    margin-right: 10px;
+  }
+  
+  input {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+  }s
+  
+  .search-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 220px;
+    height: 59px;
+    color: #fff;
+    background: #8d4de6;
+    border-radius: 50px;
+    font-size: 19px;
+    font-weight: 700;
+    cursor: pointer;
+  }
+  
+  .results-container {
+    display: grid;
+    gap: 10px;
+  }
+  
+  .train-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+  }
+  
+  .train-table th,
+  .train-table td {
+    border: 1px solid #ddd;
+    padding: 50px;
+    text-align: left;
+  }
+  
+  .train-table th {
+    background-color: #f2f2f2;
+  }
+  

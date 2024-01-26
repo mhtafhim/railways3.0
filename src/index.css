@@ -5,6 +5,9 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  font-family: 'poppins';
+  height: 100vh;
+  background:linear-gradient(#5f5289,#9d14f2)
 }
 
 code {
