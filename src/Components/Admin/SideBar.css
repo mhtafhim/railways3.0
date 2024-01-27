@@ -6,7 +6,12 @@
     transition: all 0.5s;
     -webkit-transition: all 0.5s;
   }
-  
+
+aside{
+  display: flex;
+  flex-direction: column;
+}
+
   .sidebar-title {
     display: flex;
     justify-content: space-between;

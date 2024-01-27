@@ -66,14 +66,14 @@ export const DashBoard = () => {
                     <h3>TOTAL TICKET SELL FOR THE DAY</h3>
                     <FaMoneyBillAlt className='card_icon'/>
                 </div>
-                <h1>300</h1>
+                <h1>30</h1>
             </div>
             <div className='card'>
                 <div className='card-inner'>
                     <h3>TOTAL TICKET SELL FOR THE MONTH</h3>
                     <FaMoneyBillAlt className='card_icon'/>
                 </div>
-                <h1>12</h1>
+                <h1>1200</h1>
             </div>
             <div className='card'>
                 <div className='card-inner'>
@@ -87,7 +87,7 @@ export const DashBoard = () => {
                     <h3>TOTAL SELLING TICKET PRICE</h3>
                     <BsFillBellFill className='card_icon'/>
                 </div>
-                <h1>42</h1>
+                <h1>420000</h1>
             </div>
         </div>
 

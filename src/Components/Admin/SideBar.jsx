@@ -11,7 +11,7 @@ function SideBar({openSidebarToggle, OpenSidebar}) {
     <aside id="sidebar" className={openSidebarToggle ? "sidebar-responsive": ""}>
     <div className='sidebar-title'>
         <div className='sidebar-brand'>
-            <BsPeopleFill  className='icon_header'/> SHOP
+            <BsPeopleFill  className='icon_header'/> ADMIN
         </div>
         <span className='icon close_icon' onClick={OpenSidebar}>X</span>
     </div>
