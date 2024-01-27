@@ -1,47 +1,190 @@
+/* RailwayStyles.css */
+
 .page-container {
-    max-width: 1600px;
-    margin: 0 auto;
-    padding: 20px;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  }
-  
-  .big-picture-section {
-    margin-bottom: 20px;
-  }
-  
-  .big-picture {
-    width: fit-content;
-    height: auto;
-    border-radius: 12px;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-  }
-  
-  .description {
-    text-align: center;
-    margin-top: 10px;
-  }
-  
-  .image-section {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    margin-bottom: 20px;
-  }
-  
-  .image-item {
-    text-align: center;
-    max-width: 300px;
-  }
-  
-  .image-item img {
-    width: 100%;
-    max-height: 300px;
-    border-radius: 8px;
-  }
-  
-  .image-item h2 {
-    margin: 15px 0;
-    color: #333;
-    font-size: 24px;
-  }
-  
+  max-width: 1600px;
+  margin: 0 auto;
+  padding: 20px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.big-picture-section {
+  margin-bottom: 20px;
+}
+
+.big-picture {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+.description {
+  text-align: center;
+  margin-top: 10px;
+}
+
+.image-section {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.image-item {
+  text-align: center;
+  max-width: 300px;
+}
+
+.image-item img {
+  width: 100%;
+  max-height: 300px;
+  border-radius: 8px;
+}
+
+.image-item h2 {
+  margin: 15px 0;
+  color: #333;
+  font-size: 24px;
+}
+
+.image-item p {
+  color: #666;
+  font-size: 16px;
+}
+
+/* Contact Us Section */
+.contact-us-section {
+  background-color: #f8f8f8;
+  padding: 40px 20px;
+  text-align: center;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+}
+
+.contact-us-box {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.contact-us-section h2 {
+  color: #333;
+  font-size: 28px;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+.contact-us-section p {
+  color: #666;
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+
+.contact-details {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.contact-details p {
+  color: #444;
+  font-size: 16px;
+  margin: 5px 0;
+}
+
+.contact-details p:first-child {
+  margin-top: 15px;
+}
+
+/* Payment System Section */
+.payment-system {
+  margin-top: 30px;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.brand-logos {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.brand-logos img {
+  max-width: 100px;
+  max-height: 100px;
+  margin: 10px;
+}
+
+/* Feedback Section */
+.feedback-section {
+  background-color: #f9f9f9;
+  padding: 40px;
+  text-align: center;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+}
+
+.feedback-section h2 {
+  color: #333;
+  font-size: 32px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.feedback-section p {
+  color: #666;
+  font-size: 18px;
+  margin-bottom: 30px;
+}
+
+.feedback-form {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.feedback-input {
+  width: 100%;
+  padding: 15px;
+  margin-bottom: 20px;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.feedback-input:focus {
+  outline: none;
+  border-color: #4caf50;
+}
+
+.feedback-button {
+  background-color: #4caf50;
+  color: #fff;
+  padding: 15px 20px;
+  font-size: 18px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.feedback-button:hover {
+  background-color: #0b4d13;
+}
+
+/* Footer Section */
+.footer {
+  background-color: #333;
+  margin: 0;
+  color: #fff;
+  text-align: center;
+  padding: 5px 0;
+  bottom: 0;
+  width: 100%;
+}
+
+.footer p {
+  margin: 0;
+  font-size: 16px;
+}
