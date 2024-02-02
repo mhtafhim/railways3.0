@@ -61,3 +61,8 @@
 .nav-login button:active{
     background: #f3f3f3;
 } 
+.nav-logedin{
+    align-items: center;
+    font-size: 25px;
+   display: flex;
+}

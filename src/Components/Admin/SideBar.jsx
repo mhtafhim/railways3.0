@@ -7,7 +7,9 @@ import
  import { Link } from 'react-router-dom';
 function SideBar({openSidebarToggle, OpenSidebar}) {
     const [menu,setMenu]= useState("DashBoard");
+    const isAdminArea = window.location.pathname.startsWith('/Admin');
   return (
+    
     <aside id="sidebar" className={openSidebarToggle ? "sidebar-responsive": ""}>
     <div className='sidebar-title'>
         <div className='sidebar-brand'>

@@ -1,21 +1,17 @@
 import React, { useEffect, useState } from "react";
-
 import { useLocation } from "react-router-dom";
 
-
-const ShowNavbar = ({ childern }) => {
+const ShowNavbar = ({ children }) => {
   const location = useLocation();
-  const [ShowNavbar, setShowNavbar] = useState(false);
+  const [showNavbar, setShowNavbar] = useState(true); // Default to true
+
   useEffect(() => {
-    console.log("This is location", location);
-    if (location.path === "/DashBoard") {
-      setShowNavbar(false);
-    } else {
-      setShowNavbar(true);
-    }
+    // Check if the current location is "/DashBoard"
+    setShowNavbar(location.pathname !== "/Admin");
   }, [location]);
 
-  return <div>{ShowNavbar && childern}</div>;
+  // Render children only if showNavbar is true
+  return showNavbar ? <div>{children}</div> : null;
 };
 
 export default ShowNavbar;
