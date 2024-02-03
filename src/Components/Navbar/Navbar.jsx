@@ -7,7 +7,7 @@ const USER_TYPES = {
   NORMAL_USERS: "Normal Users",
   ADMIN_USER: "Admin User ",
 };
-const CURRENT_USER_TYPE = USER_TYPES.NORMAL_USERS;
+const CURRENT_USER_TYPE = USER_TYPES.ADMIN_USER;
 export const Navbar = () => {
      const [menu,setMenu]= useState("Railway");
     
@@ -20,7 +20,7 @@ export const Navbar = () => {
      <ul className="nav-menu">
         <li onClick={()=>{setMenu("railway")}}><Link style={{textDecoration:'none', color: "black" }} to='/railway'>Railway</Link>{menu==="railway"?<hr/>:<></>}</li>
         <li onClick={()=>{setMenu("Train Schedule")}}><Link style={{textDecoration:'none', color: "black" }} to='/Train Schedule'>Train Schedule</Link>{menu==="Train Schedule"?<hr/>:<></>}</li>
-        <li onClick={()=>{setMenu("Live Location")}}><Link style={{textDecoration:'none', color: "black" }} to='/Live Location'>Live Location</Link>{menu==="Live Location"?<hr/>:<></>}</li>
+        <li onClick={()=>{setMenu("Live Location")}}><Link style={{textDecoration:'none', color: "black" }} to='/LiveLocation'>Live Location</Link>{menu==="Live Location"?<hr/>:<></>}</li>
         <li onClick={()=>{setMenu("Book")}}><Link style={{textDecoration:'none', color: "black" }} to='/Booking'>Booking</Link>{menu==="Book"?<hr/>:<></>}</li>
         
      </ul>

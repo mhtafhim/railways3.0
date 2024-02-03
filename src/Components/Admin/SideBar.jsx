@@ -24,10 +24,25 @@ function SideBar({openSidebarToggle, OpenSidebar}) {
                 <BsGrid1X2Fill className='icon'/> Dashboard
                 </Link>{menu==="DashBoard"?<hr/>:<></>}
         </li>
+        <li onClick={()=>{setMenu("TrainSchedule")}} className='sidebar-list-item'>
+        <Link style={{textDecoration:'none', color: "white" }} to='/Train Schedule'>
+                <BsFillArchiveFill className='icon'/>Train schedule
+                </Link>{menu==="TrainSchedule"?<hr/>:<></>}
+        </li>
         <li onClick={()=>{setMenu("UpdateTrain")}} className='sidebar-list-item'>
         <Link style={{textDecoration:'none', color: "white" }} to='/UpdateTrain'>
                 <BsFillArchiveFill className='icon'/> Update Train schedule
                 </Link>{menu==="UpdateTrain"?<hr/>:<></>}
+        </li>
+        <li onClick={()=>{setMenu("Booking")}} className='sidebar-list-item'>
+        <Link style={{textDecoration:'none', color: "white" }} to='/Booking'>
+                <BsFillArchiveFill className='icon'/>Booking
+                </Link>{menu==="Booking"?<hr/>:<></>}
+        </li>
+        <li onClick={()=>{setMenu("LiveLocation")}} className='sidebar-list-item'>
+        <Link style={{textDecoration:'none', color: "white" }} to='/LiveLocation'>
+                <BsFillArchiveFill className='icon'/> Live Location
+                </Link>{menu==="LiveLocation"?<hr/>:<></>}
         </li>
        
         <li onClick={()=>{setMenu("CustomerInfo")}} className='sidebar-list-item'>

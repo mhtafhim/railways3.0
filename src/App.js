@@ -19,7 +19,7 @@ const USER_TYPES = {
   NORMAL_USERS: "Normal Users",
   ADMIN_USER: "Admin User ",
 };
-const CURRENT_USER_TYPE = USER_TYPES.NORMAL_USERS;
+const CURRENT_USER_TYPE = USER_TYPES.ADMIN_USER;
 function App() {
   const [openSidebarToggle, setOpenSidebarToggle] = useState(false);
 
@@ -29,7 +29,8 @@ function App() {
   };
   return (
     <div>
-      <Navbar />
+      {(CURRENT_USER_TYPE === USER_TYPES.NORMAL_USERS ||
+        CURRENT_USER_TYPE === USER_TYPES.PUBLIC) && <Navbar />}
 
       <div className="mainContainer">
         <div className="containerChild">
