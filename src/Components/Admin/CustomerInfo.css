@@ -1,59 +1,73 @@
+/* CustomerInfo.css */
+
 .table-container {
-    width: 100%;
-    overflow-x: auto;
-  }
-  
-  .table {
-    width: 100%;
-    border-collapse: collapse;
-  }
-  
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 20px;
+  border: 3px solid #024b64;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  background-color: #ffffff;
+}
+
+.search-bar {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+input[type="text"] {
+  width: 70%;
+  padding: 8px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+button {
+  padding: 8px 16px;
+  font-size: 16px;
+  background-color: #069dbf;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.table th,
+.table td {
+  padding: 12px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+.table th {
+  background-color: #0b85a0;
+  color: #fff;
+}
+
+.table tbody tr:hover {
+  background-color: #f8a9a9;
+}
+
+.table tbody tr:nth-child(even) {
+  background-color: #c3ebef;
+}
+
+/* Responsive styles */
+@media (max-width: 600px) {
   .table th,
   .table td {
-    border: 1px solid #dddddd;
-    padding: 8px;
-    text-align: left;
+    font-size: 14px;
   }
-  
-  .table th {
-    background-color: #f2f2f2;
-  }
-  
-  .table tbody tr:nth-child(even) {
-    background-color: #f2f2f2;
-  }
-  .search-bar {
-    margin-bottom: 10px;
-  }
-  
-  .search-bar input[type="text"] {
-    width: 100%;
-    padding: 8px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box;
-  }
-  .search-bar {
-    margin-bottom: 10px;
-  }
-  
-  .search-bar input[type="text"] {
-    width: 70%;
-    padding: 8px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box;
-  }
-  
-  .search-bar button {
-    padding: 8px 15px;
-    border: none;
-    background-color: #007bff;
-    color: #fff;
-    border-radius: 4px;
-    cursor: pointer;
-  }
-  
-  .search-bar button:hover {
-    background-color: #0056b3;
-  }
+}

@@ -1,34 +1,49 @@
 /* TrainTable.css */
 
+/* Train Table Container */
 .train-table-container {
-  margin: 20px;
+  width: 80%; /* Adjust the width as needed */
+  max-width: 900px; /* Set a maximum width if desired */
+  margin: 80px auto; /* Center the container horizontally with auto margins */
+  margin-left: 300px;
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 8px;
+  border: 3px solid #024b64;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
+/* Search Bar */
 .search-bar {
-  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
 }
 
 .search-bar input[type="text"] {
   width: 70%;
-  padding: 8px;
+  padding: 12px;
   border: 1px solid #ccc;
   border-radius: 4px;
   box-sizing: border-box;
 }
 
 .search-bar button {
-  padding: 8px 15px;
+  width: 200px;
+  margin-left: auto;
+  padding: 13px 20px;
   border: none;
-  background-color: #007bff;
+  background-color: #069dbf;
   color: #fff;
   border-radius: 4px;
   cursor: pointer;
 }
 
 .search-bar button:hover {
-  background-color: #0056b3;
+  background-color: #07435d;
 }
 
+/* Train Table Styles */
 .train-table {
   width: 100%;
   border-collapse: collapse;
@@ -37,19 +52,35 @@
 .train-table th,
 .train-table td {
   border: 1px solid #ddd;
-  padding: 8px;
+  padding: 12px;
   text-align: left;
 }
 
 .train-table th {
-  background-color: #007bff;
+  background-color: #0b85a0;
   color: #fff;
 }
 
 .train-table tbody tr:nth-child(even) {
-  background-color: #f2f2f2;
+  background-color: #c3ebef;
 }
 
 .train-table tbody tr:hover {
-  background-color: #ddd;
+  background-color: #f8a9a9;
+}
+
+/* Footer Styles */
+.footer {
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  padding: 10px 0;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
+.footer p {
+  margin: 0;
+  font-size: 12px;
 }

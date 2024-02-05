@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import axios from "axios";
 import "./LoginSignup.css";
-
-export const LoginSignup = () => {
+import { Link } from 'react-router-dom';
+import { USER_TYPES } from "./UserType";
+export const LoginSignup = ({setUserType}) => {
   const [action, setAction] = useState("Login");
   const [formData, setFormData] = useState({
     name: "",
@@ -81,7 +82,7 @@ export const LoginSignup = () => {
 
        
         localStorage.setItem("token", token);
-
+        setUserType(USER_TYPES.NORMAL_USERS);
         document.querySelectorAll(".inputs input").forEach((input) => {
             input.value = "";
           });
@@ -199,15 +200,11 @@ export const LoginSignup = () => {
           >
             Sign Up
           </div>
-          <div
-            className={action === "SignUp" ? "submit gray" : "submit"}
-            onClick={() => {
-              setAction("Login");
-              clearErrorMessage();
-              handleFormSubmit();
-            }}
-          >
-            Login
+          <div className={action === "SignUp" ? "submit gray" : "submit"}><Link to = '/Verification'> <button>LogIn</button></Link>   
+            
+          
+           
+            
           </div>
         </div>
 

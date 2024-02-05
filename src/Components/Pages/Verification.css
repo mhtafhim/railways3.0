@@ -1,0 +1,33 @@
+.verification-code-form {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .verification-code-form h2 {
+    margin-top: 0;
+  }
+  
+  .verification-code-form input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .verification-code-form button {
+    width: 50%;
+    padding: 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .verification-code-form button:hover {
+    background-color: #0056b3;
+  }

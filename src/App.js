@@ -6,31 +6,28 @@ import { Booking } from "./Components/Pages/Booking";
 import { Railway } from "./Components/Pages/Railway";
 import { LiveLocation } from "./Components/Pages/LiveLocation";
 import { TrainSchedule } from "./Components/Pages/TrainSchedule";
-
+import { AdminLogin } from "./Components/Admin/AdminLogin";
 import { LoginSignup } from "./Components/Pages/LoginSignup";
 import { DashBoard } from "./Components/Admin/DashBoard";
-import ShowNavbar from "./Components/ShowNavbar/ShowNavbar";
+
+import { BookingTable } from "./Components/Pages/BookingTable";
 import { UpdateTrain } from "./Components/Admin/UpdateTrain";
 import SideBar from "./Components/Admin/SideBar";
 import { CustomerInfo } from "./Components/Admin/CustomerInfo";
 import { ReportAdmin } from "./Components/Admin/ReportAdmin";
-const USER_TYPES = {
-  PUBLIC: "Public User",
-  NORMAL_USERS: "Normal Users",
-  ADMIN_USER: "Admin User ",
-};
-const CURRENT_USER_TYPE = USER_TYPES.ADMIN_USER;
+import { Verification } from "./Components/Pages/Verification";
+import { USER_TYPES } from "./Components/Pages/UserType";
 function App() {
+  const [currentUserType, setCurrentUserType] = useState(USER_TYPES.PUBLIC);
   const [openSidebarToggle, setOpenSidebarToggle] = useState(false);
-
   useEffect(() => {});
   const OpenSidebar = () => {
     setOpenSidebarToggle(!openSidebarToggle);
   };
   return (
     <div>
-      {(CURRENT_USER_TYPE === USER_TYPES.NORMAL_USERS ||
-        CURRENT_USER_TYPE === USER_TYPES.PUBLIC) && <Navbar />}
+      {(currentUserType === USER_TYPES.NORMAL_USERS ||
+        currentUserType === USER_TYPES.PUBLIC) && <Navbar />}
 
       <div className="mainContainer">
         <div className="containerChild">
@@ -46,65 +43,85 @@ function App() {
       </div>
     </div>
   );
-}
-function AppRoutes() {
-  return (
-    <div className="containerChild">
-      <Routes>
-        <Route
-          path="/"
-          element={
-            <PublicElement>
-              <Railway />
-            </PublicElement>
-          }
-        />
-        <Route path="/railway" element={<Railway />} />
-        <Route path="/Train Schedule" element={<TrainSchedule />} />
-        <Route
-          path="/LiveLocation"
-          element={
-            <UserElement>
-              <LiveLocation />
-            </UserElement>
-          }
-        />
-        <Route
-          path="/Booking"
-          element={
-            <UserElement>
-              <Booking />
-            </UserElement>
-          }
-        />
-        <Route path="/login" element={<LoginSignup />} />
-        <Route path="/DashBoard" element={<DashBoard />} />
-        <Route path="/UpdateTrain" element={<UpdateTrain />} />
-        <Route path="/CustomerInfo" element={<CustomerInfo />} />
-        <Route path="/ReportAdmin" element={<ReportAdmin />} />
-      </Routes>
-    </div>
-  );
+  function AppRoutes() {
+    return (
+      <div className="containerChild">
+        <Routes>
+          <Route
+            path="/"
+            element={
+              <PublicElement>
+                <Railway />
+              </PublicElement>
+            }
+          />
+          <Route path="/railway" element={<Railway />} />
+          <Route path="/Train Schedule" element={<TrainSchedule />} />
+          <Route
+            path="/LiveLocation"
+            element={
+              <UserElement>
+                <LiveLocation />
+              </UserElement>
+            }
+          />
+          <Route
+            path="/Booking"
+            element={
+              <UserElement>
+                <Booking />
+              </UserElement>
+            }
+          />
+          <Route
+            path="/AdminLogin"
+            element={
+              <AdminLoginFun>
+                <AdminLogin />
+              </AdminLoginFun>
+            }
+          />
+          <Route path="/Verification" element={<Verification />} />
+          <Route
+            path="/login"
+            element={<LoginSignup setUserType={setCurrentUserType} />}
+          />
+          <Route path="/DashBoard" element={<DashBoard />} />
+          <Route path="/UpdateTrain" element={<UpdateTrain />} />
+          <Route path="/CustomerInfo" element={<CustomerInfo />} />
+          <Route path="/ReportAdmin" element={<ReportAdmin />} />
+        </Routes>
+      </div>
+    );
+  }
+
+  function PublicElement({ children }) {
+    return <> {children}</>;
+  }
+  function UserElement({ children }) {
+    if (
+      currentUserType === USER_TYPES.ADMIN_USER ||
+      currentUserType === USER_TYPES.NORMAL_USERS
+    ) {
+      {
+        return <> {children}</>;
+      }
+    }
+  }
+  function AdminElement({ children }) {
+    if (currentUserType === USER_TYPES.ADMIN_USER) {
+      {
+        return <> {children}</>;
+      }
+    }
+  }
+  function AdminLoginFun({ children }) {
+    if (currentUserType === USER_TYPES.ADMIN_LOGIN) {
+      {
+        return <> {children}</>;
+      }
+    }
+  }
 }
 
-function PublicElement({ children }) {
-  return <> {children}</>;
-}
-function UserElement({ children }) {
-  if (
-    CURRENT_USER_TYPE === USER_TYPES.ADMIN_USER ||
-    CURRENT_USER_TYPE === USER_TYPES.NORMAL_USERS
-  ) {
-    {
-      return <> {children}</>;
-    }
-  }
-}
-function AdminElement({ children }) {
-  if (CURRENT_USER_TYPE === USER_TYPES.ADMIN_USER) {
-    {
-      return <> {children}</>;
-    }
-  }
-}
 export default App;

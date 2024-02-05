@@ -1,28 +1,28 @@
 .table-container {
-    margin: 20px;
-  }
-  
-  .customer-report-table {
-    width: 100%;
-    border-collapse: collapse;
-  }
-  
-  .customer-report-table th,
-  .customer-report-table td {
-    border: 1px solid #ddd;
-    padding: 8px;
-    text-align: left;
-  }
-  
-  .customer-report-table th {
-    background-color: #007bff;
-    color: #fff;
-  }
-  
-  .customer-report-table tbody tr:nth-child(even) {
-    background-color: #f2f2f2;
-  }
-  
-  .customer-report-table tbody tr:hover {
-    background-color: #ddd;
-  }
+  margin: 20px;
+}
+
+.customer-report-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.customer-report-table th,
+.customer-report-table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+
+.customer-report-table th {
+  background-color: #007bff;
+  color: #fff;
+}
+
+.customer-report-table tbody tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+.customer-report-table tbody tr:hover {
+  background-color: #ddd;
+}
