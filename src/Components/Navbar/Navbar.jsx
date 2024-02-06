@@ -4,7 +4,7 @@ import logo from '../Assets/Logo.png'
 import { Link } from 'react-router-dom';
 
 import { USER_TYPES } from "../Pages/UserType";
-const CURRENT_USER_TYPE = USER_TYPES.NORMAL_USERS;
+const CURRENT_USER_TYPE = USER_TYPES.PUBLIC;
 export const Navbar = () => {
      const [menu,setMenu]= useState("Railway");
    

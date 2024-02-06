@@ -27,7 +27,7 @@ function App() {
   return (
     <div>
       {(currentUserType === USER_TYPES.NORMAL_USERS ||
-        currentUserType === USER_TYPES.PUBLIC) && <Navbar />}
+        currentUserType === USER_TYPES.PUBLIC) && <Navbar setUserType={setCurrentUserType} />}
 
       <div className="mainContainer">
         <div className="containerChild">
