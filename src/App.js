@@ -27,7 +27,9 @@ function App() {
   return (
     <div>
       {(currentUserType === USER_TYPES.NORMAL_USERS ||
-        currentUserType === USER_TYPES.PUBLIC) && <Navbar setUserType={setCurrentUserType} />}
+        currentUserType === USER_TYPES.PUBLIC) && (
+        <Navbar setUserType={setCurrentUserType} />
+      )}
 
       <div className="mainContainer">
         <div className="containerChild">
@@ -90,6 +92,7 @@ function App() {
           <Route path="/UpdateTrain" element={<UpdateTrain />} />
           <Route path="/CustomerInfo" element={<CustomerInfo />} />
           <Route path="/ReportAdmin" element={<ReportAdmin />} />
+          <Route path="/BookingTable" element={<BookingTable />} />
         </Routes>
       </div>
     );

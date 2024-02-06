@@ -1,0 +1,62 @@
+/* TrainSchedule.css */
+
+/* Train Table Container */
+.train-table-container {
+    width: 80%; /* Adjust the width as needed */
+    max-width: 900px; /* Set a maximum width if desired */
+    margin: 80px auto; /* Center the container horizontally with auto margins */
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    border: 3px solid #024b64;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Train Table Styles */
+  .train-table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .train-table th,
+  .train-table td {
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: left;
+  }
+  
+  .train-table th {
+    background-color: #0b85a0;
+    color: #fff;
+  }
+  
+  .train-table tbody tr:nth-child(even) {
+    background-color: #c3ebef;
+  }
+  
+  .train-table tbody tr:hover {
+    background-color: #f8a9a9;
+  }
+  
+  /* Button Styles */
+  .train-table button {
+    padding: 8px 16px;
+    background-color: #069dbf;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .train-table button:hover {
+    background-color: #07435d;
+  }
+  
+  /* Set button to fill the available space in the cell */
+  .train-table .action-button {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  

@@ -6,7 +6,7 @@ import { useNavigate,Link } from "react-router-dom";
 export const LoginSignup = ({ setUserType }) => {
   const [action, setAction] = useState("Login");
   const navigate = useNavigate();
-
+  
   return (
     <div className="container">
       <div className="header">
@@ -46,13 +46,13 @@ export const LoginSignup = ({ setUserType }) => {
             className={action === "Login" ? "submit gray" : "submit"}
             onClick={() => {
               setAction("SignUp");
-             //
+            
              if (action === "SignUp")
              {
-              console.log("kaj krtese ");
+             
               navigate("/Verification");
              } 
-              // setOpenModal(true);
+            
             }}
           >
             Sign Up
@@ -62,7 +62,9 @@ export const LoginSignup = ({ setUserType }) => {
               className={action === "SignUp" ? "submit gray" : "submit"}
               onClick={() => {
                 setAction("Login");
-                if (action === "Login") navigate("/Railway");
+                if (action === "Login") {navigate("/Railway");
+            
+              }
               }}
             >
               Login
