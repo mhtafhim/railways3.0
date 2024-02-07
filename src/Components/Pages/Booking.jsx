@@ -1,27 +1,46 @@
-import React from 'react'
-import './Booking.css';
+import React from "react";
+import "./Booking.css";
+import { useNavigate } from "react-router-dom";
 export const Booking = () => {
-  return (
-    <div className="booking-container">
-    <div className="search-box">
-      <label htmlFor="from">From:</label>
-      <input type="text" id="from" />
+  const navigate = useNavigate();
+	const handleSubmit = async (e) => {
+		e.preventDefault();
 
-      <label htmlFor="to">To:</label>
-      <input type="text" id="to" />
+		const data = e.target;
 
-      <label htmlFor="date">Date of Journey:</label>
-      <input type="date" id="date" />
+		const dataObject = {
+			from: data.from.value,
+			to: data.to.value,
+			date: data.date.value,
+		};
+		console.log(dataObject);
 
-      <label htmlFor="class">Choose Class:</label>
-      <select id="class">
-        <option value="economy">Economy</option>
-        <option value="business">Business</option>
-        <option value="first-class">First Class</option>
-      </select>
 
-      <button type="button" id="search-button">Search</button>
-    </div>
-  </div>
-  )
-}
+    sessionStorage.setItem("bookingData", JSON.stringify(dataObject));
+    navigate("/BookingTable");
+
+
+
+	};
+
+	return (
+		<form onSubmit={handleSubmit}>
+			<div className="booking-container">
+				<div className="search-box">
+					<label htmlFor="from">From:</label>
+					<input type="text" id="from" />
+
+					<label htmlFor="to">To:</label>
+					<input type="text" id="to" />
+
+					<label htmlFor="date">Date of Journey:</label>
+					<input type="date" id="date" />
+
+					<button type="submit" id="search-button">
+						Search
+					</button>
+				</div>
+			</div>
+		</form>
+	);
+};

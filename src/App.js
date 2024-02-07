@@ -1,5 +1,5 @@
 import "./App.css";
-import { useEffect, useState } from "react";
+import { createContext, useEffect, useState } from "react";
 import { Navbar } from "./Components/Navbar/Navbar";
 import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 import { Booking } from "./Components/Pages/Booking";
@@ -17,15 +17,39 @@ import { CustomerInfo } from "./Components/Admin/CustomerInfo";
 import { ReportAdmin } from "./Components/Admin/ReportAdmin";
 import { Verification } from "./Components/Pages/Verification";
 import { USER_TYPES } from "./Components/Pages/UserType";
+
+export const userContext = createContext();
+
+
 function App() {
-  const [currentUserType, setCurrentUserType] = useState(USER_TYPES.PUBLIC);
+
+  
+
+  
+  const [currentUserType, setCurrentUserType] = useState(USER_TYPES.ADMIN_USER);
   const [openSidebarToggle, setOpenSidebarToggle] = useState(false);
-  useEffect(() => {});
+
   const OpenSidebar = () => {
     setOpenSidebarToggle(!openSidebarToggle);
   };
+
+
+  useEffect(() => {
+
+    const token = localStorage.getItem("token");
+    if (token) {
+      setCurrentUserType(USER_TYPES.NORMAL_USERS);
+    }
+  }, []);
+
+
+  /*
+      localstorage.removeItem("token");
+  */
+
+
   return (
-    <div>
+    <userContext.Provider value={{currentUserType,setCurrentUserType}}>
       {(currentUserType === USER_TYPES.NORMAL_USERS ||
         currentUserType === USER_TYPES.PUBLIC) && (
         <Navbar setUserType={setCurrentUserType} />
@@ -43,7 +67,7 @@ function App() {
         </div>
         <AppRoutes />
       </div>
-    </div>
+    </userContext.Provider>
   );
   function AppRoutes() {
     return (
