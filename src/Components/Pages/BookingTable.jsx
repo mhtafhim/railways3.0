@@ -91,7 +91,7 @@ export const BookingTable = () => {
               <td>{item.businessSeat - item.businessSeatBooked}</td>
               <td>{item.firstClassSeat - item.firstClassSeatBooked}</td>
 							<td>
-								<button onClick={() => setAction("Forward")}>Action</button>
+								<button onClick={() => navigate("/BookingFrom")}>Action</button>
 							</td>
 						</tr>
 					))}

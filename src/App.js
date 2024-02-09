@@ -9,7 +9,7 @@ import { TrainSchedule } from "./Components/Pages/TrainSchedule";
 import { AdminLogin } from "./Components/Admin/AdminLogin";
 import { LoginSignup } from "./Components/Pages/LoginSignup";
 import { DashBoard } from "./Components/Admin/DashBoard";
-
+import { BookingFrom } from "./Components/Pages/BookingFrom";
 import { BookingTable } from "./Components/Pages/BookingTable";
 import { UpdateTrain } from "./Components/Admin/UpdateTrain";
 import SideBar from "./Components/Admin/SideBar";
@@ -20,12 +20,7 @@ import { USER_TYPES } from "./Components/Pages/UserType";
 
 export const userContext = createContext();
 
-
 function App() {
-
-  
-
-  
   const [currentUserType, setCurrentUserType] = useState(USER_TYPES.ADMIN_USER);
   const [openSidebarToggle, setOpenSidebarToggle] = useState(false);
 
@@ -33,23 +28,19 @@ function App() {
     setOpenSidebarToggle(!openSidebarToggle);
   };
 
-
   useEffect(() => {
-
     const token = localStorage.getItem("token");
     if (token) {
       setCurrentUserType(USER_TYPES.NORMAL_USERS);
     }
   }, []);
 
-
   /*
       localstorage.removeItem("token");
   */
 
-
   return (
-    <userContext.Provider value={{currentUserType,setCurrentUserType}}>
+    <userContext.Provider value={{ currentUserType, setCurrentUserType }}>
       {(currentUserType === USER_TYPES.NORMAL_USERS ||
         currentUserType === USER_TYPES.PUBLIC) && (
         <Navbar setUserType={setCurrentUserType} />
@@ -113,6 +104,7 @@ function App() {
             element={<LoginSignup setUserType={setCurrentUserType} />}
           />
           <Route path="/DashBoard" element={<DashBoard />} />
+          <Route path="/BookingFrom" element={<BookingFrom />} />
           <Route path="/UpdateTrain" element={<UpdateTrain />} />
           <Route path="/CustomerInfo" element={<CustomerInfo />} />
           <Route path="/ReportAdmin" element={<ReportAdmin />} />
