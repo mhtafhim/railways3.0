@@ -13,7 +13,11 @@ export const Navbar = () => {
 	const [menu, setMenu] = useState("Railway");
 
 	const profileData = JSON.parse(localStorage.getItem("userData"));
-	console.log(profileData);
+	if(profileData){
+		console.log(profileData);
+	}
+
+
 
 	return (
 		<div className="navbar">
@@ -67,6 +71,7 @@ export const Navbar = () => {
                      setMenu("Live Location");
                      localStorage.removeItem("token");
                      localStorage.removeItem("userData");
+					 window. location. reload(); 
 						}}>
 						Logout
 						{menu === "Live Location" ? <hr /> : <></>}
@@ -86,7 +91,8 @@ export const Navbar = () => {
 			{(currentUserType === USER_TYPES.NORMAL_USERS ||
 				currentUserType === USER_TYPES.ADMIN_USER) && (
 				<div className="nav-logedin">
-					You are logged in as: {profileData.name}
+					
+					You are logged in as: {(profileData? profileData.name : "Guest")}
 				</div>
 			)}
 		</div>

@@ -6,7 +6,7 @@ import { useNavigate, Link } from "react-router-dom";
 import { userContext } from "../../App";
 export const LoginSignup = ({ setUserType }) => {
   const { currentUserType, setCurrentUserType } = useContext(userContext);
-	const [action, setAction] = useState("SignUp");
+	const [action, setAction] = useState("Login");
 	const navigate = useNavigate();
 
 	const handleSubmit = async (e) => {

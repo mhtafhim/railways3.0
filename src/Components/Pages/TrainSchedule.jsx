@@ -11,7 +11,7 @@ export const TrainSchedule = () => {
   const [trainScheduleData, setTrainScheduleData] = useState([]);
 
   useEffect(() => {
-    // Fetch train schedule data from the server
+   
     const url = 'https://localhost:7007/api/Train_Schedule/show_train_schedule';
     const fetchData = async () => {
       const response = await axios.get(url);
@@ -31,7 +31,7 @@ export const TrainSchedule = () => {
   const handleSearchChange = (event) => {
     setSearchTerm(event.target.value);
 
-    
+   
 
   };
 

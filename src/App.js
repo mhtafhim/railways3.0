@@ -21,7 +21,7 @@ import { USER_TYPES } from "./Components/Pages/UserType";
 export const userContext = createContext();
 
 function App() {
-  const [currentUserType, setCurrentUserType] = useState(USER_TYPES.ADMIN_USER);
+  const [currentUserType, setCurrentUserType] = useState(USER_TYPES.PUBLIC);
   const [openSidebarToggle, setOpenSidebarToggle] = useState(false);
 
   const OpenSidebar = () => {
@@ -31,7 +31,7 @@ function App() {
   useEffect(() => {
     const token = localStorage.getItem("token");
     if (token) {
-      setCurrentUserType(USER_TYPES.NORMAL_USERS);
+      setCurrentUserType(USER_TYPES.PUBLIC);
     }
   }, []);
 
@@ -135,7 +135,7 @@ function App() {
     }
   }
   function AdminLoginFun({ children }) {
-    if (currentUserType === USER_TYPES.ADMIN_LOGIN) {
+    if (currentUserType === USER_TYPES.PUBLIC || currentUserType === USER_TYPES.NORMAL_USERS) {
       {
         return <> {children}</>;
       }

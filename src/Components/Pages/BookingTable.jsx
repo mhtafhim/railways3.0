@@ -2,7 +2,6 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
 export const BookingTable = () => {
-	
 	const [action, setAction] = useState("Stop");
 	const navigate = useNavigate();
 	const handleButtonClick = (trainId) => {
@@ -14,7 +13,7 @@ export const BookingTable = () => {
 	const data = JSON.parse(sessionStorage.getItem("bookingData"));
 	//sessionStorage.removeItem("bookingData");
 
-	  console.log(data);
+	console.log(data);
 
 	useEffect(() => {
 		const fetchData = async () => {
@@ -42,7 +41,7 @@ export const BookingTable = () => {
 	// console.log(data);
 
 	console.log(availableJourney);
-/*
+	/*
 	businessSeat: 80;
 	businessSeatBooked: 1;
 	departureTime: "10:30:00";
@@ -67,14 +66,14 @@ export const BookingTable = () => {
 				<thead>
 					<tr>
 						<th>Train Name</th>
-            <th>Start Station</th>
-            <th>Destination Station</th>
-            <th>Journey Date</th>
-            <th>Departure Time</th>
-            <th>Destination Arrival Time</th>
-            <th>Economy Seat</th>
-            <th>Business Seat</th>
-            <th>First Class Seat</th>
+						<th>Start Station</th>
+						<th>Destination Station</th>
+						<th>Journey Date</th>
+						<th>Departure Time</th>
+						<th>Destination Arrival Time</th>
+						<th>Economy Seat</th>
+						<th>Business Seat</th>
+						<th>First Class Seat</th>
 						<th>Action</th>
 					</tr>
 				</thead>
@@ -82,16 +81,28 @@ export const BookingTable = () => {
 					{availableJourney.map((item, index) => (
 						<tr key={index}>
 							<td>{item.trainName}</td>
-              <td>{item.startStation}</td>
-              <td>{item.destinationStation}</td>
-              <td>{item.journeyDate}</td>
-              <td>{item.departureTime}</td>
-              <td>{item.destinationArrivalTime}</td>
-              <td>{item.ecoSeat - item.economySeatBooked}</td>
-              <td>{item.businessSeat - item.businessSeatBooked}</td>
-              <td>{item.firstClassSeat - item.firstClassSeatBooked}</td>
+							<td>{item.startStation}</td>
+							<td>{item.destinationStation}</td>
+							<td>{item.journeyDate}</td>
+							<td>{item.departureTime}</td>
+							<td>{item.destinationArrivalTime}</td>
+							<td>{item.ecoSeat - item.economySeatBooked}</td>
+							<td>{item.businessSeat - item.businessSeatBooked}</td>
+							<td>{item.firstClassSeat - item.firstClassSeatBooked}</td>
 							<td>
-								<button onClick={() => navigate("/BookingFrom")}>Action</button>
+								<button onClick={() => {
+									const journeyData = {
+
+										journeyID: item.journeyId,
+										ecoSeat: item.ecoSeat - item.economySeatBooked,
+										businessSeat: item.businessSeat - item.businessSeatBooked,
+										firstClassSeat: item.firstClassSeat - item.firstClassSeatBooked,
+
+									};
+									localStorage.setItem("journeyID", JSON.stringify(item.journeyId));
+									localStorage.setItem("journeyData", JSON.stringify(journeyData));
+									localStorage.setItem("trainID", JSON.stringify(item.trainId));
+									navigate("/BookingFrom")}}>Action</button>
 							</td>
 						</tr>
 					))}

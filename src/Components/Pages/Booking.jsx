@@ -2,7 +2,8 @@ import React from "react";
 import "./Booking.css";
 import { useNavigate } from "react-router-dom";
 export const Booking = () => {
-  const navigate = useNavigate();
+	const navigate = useNavigate();
+
 	const handleSubmit = async (e) => {
 		e.preventDefault();
 
@@ -15,12 +16,8 @@ export const Booking = () => {
 		};
 		console.log(dataObject);
 
-
-    sessionStorage.setItem("bookingData", JSON.stringify(dataObject));
-    navigate("/BookingTable");
-
-
-
+		sessionStorage.setItem("bookingData", JSON.stringify(dataObject));
+		navigate("/BookingTable");
 	};
 
 	return (
