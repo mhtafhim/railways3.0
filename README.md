@@ -152,7 +152,7 @@ railways3.0/
 
 #### Clone the Repository
 ```sh
-git clone https://github.com/yourusername/railways3.0.git
+git clone https://github.com/mhtafhim/railways3.0.git
 cd railways3.0
 ```
 
