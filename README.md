@@ -1,70 +1,195 @@
-# Getting Started with Create React App
+# Railway E-Service Frontend
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Overview
+This React-based frontend application serves as the user interface for the Railway E-Service system. It provides a comprehensive platform for users to search, book, and manage train tickets, while also offering administrative capabilities for train scheduling and system management.
 
-## Available Scripts
+## Features
 
-In the project directory, you can run:
+### For Users
+- **Train Schedule Viewing:** Browse available trains and their schedules.
+- **User Registration/Login:** Create accounts and authenticate using email verification.
+- **Ticket Booking:** Search for trains by origin, destination, and date.
+- **Seat Selection:** Choose from Economy, Business, or First Class seating.
+- **Payment Integration:** Multiple payment methods including Bkash, Nagad, Rocket, Visa, and MasterCard.
+- **Live Location Tracking:** Track train locations in real-time (requires API key setup).
 
-### `npm start`
+### For Administrators
+- **Dashboard:** Visualize ticket sales, customer counts, and revenue metrics.
+- **Train Management:** Add and update train schedules.
+- **Customer Information:** Access user booking details and reports.
+- **Sales Reports:** View detailed reports on ticket sales.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Technology Stack
+- **React.js:** Frontend library for building user interfaces.
+- **React Router:** For navigation between different components.
+- **Axios:** For API requests to the backend server.
+- **Recharts:** For data visualization in the admin dashboard.
+- **React Icons:** For UI icons throughout the application.
+- **Google Maps API:** For live location tracking functionality.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Project Structure
 
-### `npm test`
+The application is organized into the following main directories:
+```
+/components       # Contains all React components
+  /Admin         # Administrative interfaces and dashboards
+  /Assets        # Images and static resources
+  /Hero          # Hero section components
+  /Navbar        # Navigation components
+  /Pages         # Main page components like booking, login, etc.
+```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+```
+railways3.0/
+│
+├── public/
+│   ├── index.html
+│   ├── favicon.ico
+│   └── manifest.json
+│
+├── src/
+│   ├── App.js
+│   ├── index.js
+│   ├── App.css
+│   │
+│   ├── Components/
+│   │   ├── Admin/
+│   │   │   ├── Dashboard.jsx
+│   │   │   ├── AddTrain.jsx
+│   │   │   ├── ManageSchedule.jsx
+│   │   │   ├── SalesReport.jsx
+│   │   │   ├── CustomerList.jsx
+│   │   │   └── AdminLayout.jsx
+│   │   │
+│   │   ├── Auth/
+│   │   │   ├── Login.jsx
+│   │   │   ├── Register.jsx
+│   │   │   ├── ForgotPassword.jsx
+│   │   │   └── OTPVerification.jsx
+│   │   │
+│   │   ├── Booking/
+│   │   │   ├── SearchTrains.jsx
+│   │   │   ├── TrainList.jsx
+│   │   │   ├── TrainDetails.jsx
+│   │   │   ├── SeatSelection.jsx
+│   │   │   ├── PassengerInfo.jsx
+│   │   │   ├── PaymentOptions.jsx
+│   │   │   └── BookingConfirmation.jsx
+│   │   │
+│   │   ├── User/
+│   │   │   ├── MyBookings.jsx
+│   │   │   ├── UserProfile.jsx
+│   │   │   ├── EditProfile.jsx
+│   │   │   └── UserDashboard.jsx
+│   │   │
+│   │   ├── Pages/
+│   │   │   ├── Home.jsx
+│   │   │   ├── About.jsx
+│   │   │   ├── Contact.jsx
+│   │   │   ├── LocationTracker.jsx
+│   │   │   └── FAQ.jsx
+│   │   │
+│   │   ├── Hero/
+│   │   │   ├── Hero.jsx
+│   │   │   └── HeroStyles.css
+│   │   │
+│   │   ├── Navbar/
+│   │   │   ├── Navbar.jsx
+│   │   │   └── NavbarStyles.css
+│   │   │
+│   │   ├── Footer/
+│   │   │   ├── Footer.jsx
+│   │   │   └── FooterStyles.css
+│   │   │
+│   │   └── Common/
+│   │       ├── Loader.jsx
+│   │       ├── ErrorPage.jsx
+│   │       ├── Button.jsx
+│   │       └── Card.jsx
+│   │
+│   ├── Assets/
+│   │   ├── images/
+│   │   │   ├── logo.png
+│   │   │   ├── hero-bg.jpg
+│   │   │   └── train-icons/
+│   │   │
+│   │   └── icons/
+│   │
+│   ├── hooks/
+│   │   ├── useAuth.js
+│   │   ├── useBooking.js
+│   │   └── useAPI.js
+│   │
+│   ├── context/
+│   │   ├── AuthContext.js
+│   │   └── BookingContext.js
+│   │
+│   ├── services/
+│   │   ├── api.js
+│   │   ├── authService.js
+│   │   ├── bookingService.js
+│   │   └── trainService.js
+│   │
+│   └── utils/
+│       ├── dateFormatter.js
+│       ├── validations.js
+│       ├── localStorage.js
+│       └── constants.js
+│
+├── .gitignore
+├── package.json
+├── README.md
+└── .env
+```
 
-### `npm run build`
+## Getting Started
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Prerequisites
+- Node.js (version 14.0.0 or above)
+- npm or yarn package manager
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Installation
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+#### Clone the Repository
+```sh
+git clone https://github.com/yourusername/railways3.0.git
+cd railways3.0
+```
 
-### `npm run eject`
+#### Install Dependencies
+```sh
+npm install
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+#### Start the Development Server
+```sh
+npm start
+```
+The application will be available at [http://localhost:3000](http://localhost:3000).
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Configuration
+To enable live location tracking, you need to add your Google Maps API key in the `LocationTracker.jsx` file:
+```jsx
+<LoadScript googleMapsApiKey="YOUR_API_KEY">
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## API Integration
+The frontend connects to a RESTful API for data retrieval and storage. The main API endpoints include:
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+- **Authentication:** `/api/Reg/login`, `/api/Reg/sign_up`, `/api/Reg/send_otp`
+- **Train Schedule:** `/api/Train_Schedule/show_train_schedule`
+- **Booking:** `/api/Booking/get_available_trains`, `/api/Booking/add_booking`, `/api/Booking/get_fare`
 
-## Learn More
+## Building for Production
+To create a production build:
+```sh
+npm run build
+```
+This will generate optimized files in the `build` directory.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Contributing
+1. **Fork the repository**
+2. **Create a feature branch:** `git checkout -b feature/amazing-feature`
+3. **Commit your changes:** `git commit -m 'Add some amazing feature'`
+4. **Push to the branch:** `git push origin feature/amazing-feature`
+5. **Open a Pull Request**
